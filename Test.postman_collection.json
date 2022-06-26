@@ -1,0 +1,335 @@
+{
+	"info": {
+		"_postman_id": "6bfb843a-1f48-4839-814c-4c73f8e6906e",
+		"name": "Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13354943"
+	},
+	"item": [
+		{
+			"name": "Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"token\", pm.response.text());\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"is token valid\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"ey\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{mockURL}}/token",
+					"host": [
+						"{{mockURL}}"
+					],
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/https://test.hb.com/token",
+							"protocol": "{{url}}/https",
+							"host": [
+								"test",
+								"hb",
+								"com"
+							],
+							"path": [
+								"token"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+				}
+			]
+		},
+		{
+			"name": "View Invoice",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"is InvoiceLink valid\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"InvoiceLink\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"is result valid\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Result\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"is success valid\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{mockURL}}/viewInvoice?barcode={{barcode}}",
+					"host": [
+						"{{mockURL}}"
+					],
+					"path": [
+						"viewInvoice"
+					],
+					"query": [
+						{
+							"key": "barcode",
+							"value": "{{barcode}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "View Invoice",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://f746c178-c87f-4014-8fa2-5986b991f56d.mock.pstmn.io/viewInvoice?barcode=0000000",
+							"protocol": "https",
+							"host": [
+								"f746c178-c87f-4014-8fa2-5986b991f56d",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"viewInvoice"
+							],
+							"query": [
+								{
+									"key": "barcode",
+									"value": "0000000"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 26 Jun 2022 16:43:59 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "x-srv-trace",
+							"value": "v=1;t=a267cd60a09be276"
+						},
+						{
+							"key": "x-srv-span",
+							"value": "v=1;s=a6ba22ca75942db7"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "120"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "119"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1656261899"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4c-Jvid5MwT/COGDRZwJa48ERYRPSg\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{ \r\n    \"InvoiceLink\":  \"http://abc.com/invoice.pdf\",\r\n    \"Result\": \r\n    {\r\n        \"success\": true \r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Send Invoice",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Barcode\": \"{{barcode}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{mockURL}}/sendInvoice",
+					"host": [
+						"{{mockURL}}"
+					],
+					"path": [
+						"sendInvoice"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/https://test.hb.com/sendInvoice",
+							"protocol": "{{url}}/https",
+							"host": [
+								"test",
+								"hb",
+								"com"
+							],
+							"path": [
+								"sendInvoice"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	]
+}

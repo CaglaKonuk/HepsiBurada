@@ -1,0 +1,135 @@
+{
+	"id": "930f121b-c8fc-423b-a47d-b5202ba1b713",
+	"name": "Test",
+	"timestamp": "2022-06-26T17:15:59.031Z",
+	"collection_id": "13354943-6bfb843a-1f48-4839-814c-4c73f8e6906e",
+	"folder_id": 0,
+	"environment_id": "13354943-be9c4b5d-8724-4196-aa10-6b24b1ae22f5",
+	"totalPass": 7,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "f36723f0-c6a9-404e-86d4-c416b662e3bf",
+			"name": "Token",
+			"url": "https://f746c178-c87f-4014-8fa2-5986b991f56d.mock.pstmn.io/token",
+			"time": 329,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"is token valid": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"is token valid": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				329
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"is token valid": true
+				}
+			]
+		},
+		{
+			"id": "964e400f-6560-42dc-9b57-72a60ce3ab8b",
+			"name": "View Invoice",
+			"url": "https://f746c178-c87f-4014-8fa2-5986b991f56d.mock.pstmn.io/viewInvoice?barcode=0000000",
+			"time": 362,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"is InvoiceLink valid": true,
+				"is result valid": true,
+				"is success valid": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"is InvoiceLink valid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"is result valid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"is success valid": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				362
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"is InvoiceLink valid": true,
+					"is result valid": true,
+					"is success valid": true
+				}
+			]
+		},
+		{
+			"id": "0015d1b6-5621-4635-89f7-bd821fc847cb",
+			"name": "Send Invoice",
+			"url": "https://f746c178-c87f-4014-8fa2-5986b991f56d.mock.pstmn.io/sendInvoice",
+			"time": 308,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				308
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 999,
+	"collection": {
+		"requests": [
+			{
+				"id": "f36723f0-c6a9-404e-86d4-c416b662e3bf",
+				"method": "POST"
+			},
+			{
+				"id": "964e400f-6560-42dc-9b57-72a60ce3ab8b",
+				"method": "GET"
+			},
+			{
+				"id": "0015d1b6-5621-4635-89f7-bd821fc847cb",
+				"method": "POST"
+			}
+		]
+	}
+}
