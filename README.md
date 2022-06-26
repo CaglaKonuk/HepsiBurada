@@ -2,11 +2,11 @@
 
 ## UI Test
 
-hepsiburadatest.py dosyasını çalıştırmak için Chrome Driver yüklü olmalıdır.
+UItest.py dosyasını çalıştırmak için Chrome Driver yüklü olmalıdır.
 
 Chrome version 102 ile test edilmiştir.
 
-Bulunuduğu klasorden cmd ekranına gidip python hepsiburadatest.py yazarak çalıştırılır.
+Bulunuduğu klasorden cmd ekranına gidip python UItest.py yazarak çalıştırılır.
 
 
 ## API Test
