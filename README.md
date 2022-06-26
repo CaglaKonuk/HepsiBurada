@@ -1,6 +1,5 @@
 # HepsiBurada
 
-
 ## UI Test
 
 hepsiburadatest.py dosyasını çalıştırmak için Chrome Driver yüklü olmalıdır.
